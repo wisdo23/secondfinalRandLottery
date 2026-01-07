@@ -4,7 +4,7 @@ import endowment from "@/assets/Endowment Thursday.jpeg";
 import goldenSouvenir from "@/assets/Golden Souvenir Tuesday.jpeg";
 import samediSoir from "@/assets/Samedi Soir Saturday.jpeg";
 import starLotto from "@/assets/Star Sunday.jpeg";
-import sikaKese from "@/assets/sika kese.jpeg";
+import sikaKese from "@/assets/Sika kese.jpeg";
 import randLogo from "@/assets/rand_single-removebg-preview.png";
 
 export const gameImages: Record<string, string> = {
