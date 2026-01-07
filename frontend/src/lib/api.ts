@@ -8,9 +8,13 @@ async function request<T>(path: string, options?: { method?: HttpMethod; body?: 
   const headers: Record<string, string> = {
     "Content-Type": "application/json",
   };
-  const token = getStoredToken();
-  if (token) {
-    headers["Authorization"] = `Bearer ${token}`;
+
+  // Do not send Authorization header for /auth/google
+  if (!path.startsWith("/auth/google")) {
+    const token = getStoredToken();
+    if (token) {
+      headers["Authorization"] = `Bearer ${token}`;
+    }
   }
 
   const res = await fetch(`${API_BASE}${path}`, {
