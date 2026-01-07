@@ -3,7 +3,7 @@
     {
       "name": "backend",
       "env": {
-        "CORS_ORIGINS": "[\"https://randproject.vercel.app\",\"http://localhost:5173\"]"
+        "CORS_ORIGINS": "[\"hhttps://randproject1.vercel.app\",\"http://localhost:5173\"]"
       }
     }
   ]
