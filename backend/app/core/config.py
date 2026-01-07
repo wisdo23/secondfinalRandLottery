@@ -9,7 +9,10 @@ class Settings(BaseSettings):
     app_debug: bool = True
 
     database_url: str
-    cors_origins: str = "http://localhost:5173,http://localhost:8080,http://localhost:4173"
+    cors_origins: str = (
+        "http://localhost:5173,http://localhost:8080,http://localhost:4173,"
+        "https://randproject.vercel.app"
+    )
     jwt_secret: str = "change-me-in-prod"
     jwt_algorithm: str = "HS256"
     jwt_expire_minutes: int = 60 * 24 * 7  # one week
