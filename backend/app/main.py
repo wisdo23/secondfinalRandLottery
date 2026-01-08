@@ -20,7 +20,7 @@ cors_origins.extend([
 app.add_middleware(
     CORSMiddleware,
     allow_origins=cors_origins,
-    allow_origin_regex="https://randproject(?:-[^.]+)?\.vercel\.app",
+    allow_origin_regex=r"https://randproject(?:-[^.]+)?\.vercel\.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
