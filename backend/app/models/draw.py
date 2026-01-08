@@ -12,6 +12,7 @@ class Draw(Base, TimestampMixin):
     game_id: Mapped[int] = mapped_column(ForeignKey("games.id", ondelete="CASCADE"), index=True)
     draw_datetime: Mapped[datetime] = mapped_column(DateTime(timezone=False))
     notified: Mapped[bool] = mapped_column(Boolean, default=False)
+    image: Mapped[str | None] = mapped_column(String(255), nullable=True)  # Path or filename of the draw image
 
     game: Mapped["Game"] = relationship(back_populates="draws")
     results: Mapped[List["Result"]] = relationship(

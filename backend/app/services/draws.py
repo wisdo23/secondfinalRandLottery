@@ -16,6 +16,6 @@ class DrawService:
         game = await session.get(Game, payload.game_id)
         if not game:
             raise HTTPException(status_code=404, detail="Game not found")
-        draw = await DrawRepository.create(session, payload.game_id, payload.draw_datetime)
+        draw = await DrawRepository.create(session, payload.game_id, payload.draw_datetime, payload.image)
         await session.commit()
         return draw

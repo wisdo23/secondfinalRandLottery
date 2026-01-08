@@ -96,8 +96,10 @@ export interface AuthToken {
 
 export const api = {
   getGames: () => request<ApiGame[]>("/games/"),
-  createGame: (data: { name: string; description?: string }) =>
+  createGame: (data: { name: string; description?: string; image?: string }) =>
     request<ApiGame>("/games/", { method: "POST", body: data }),
+  deleteGame: (id: string | number) =>
+    request<void>(`/games/${id}`, { method: "DELETE" }),
 
   getDraws: () => request<ApiDraw[]>("/draws/"),
   createDraw: (data: { game_id: number; draw_datetime: string }) =>

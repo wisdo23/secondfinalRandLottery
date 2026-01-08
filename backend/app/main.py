@@ -11,12 +11,16 @@ app = FastAPI(title=settings.app_name)
 # Force HTTPS redirect to avoid mixed content and 307 issues
 
 # Parse CORS origins
-cors_origins = settings.get_cors_origins()
-vercel_origin_regex = "https://randproject(?:-[^.]+)?\.vercel\.app"
+cors_origins = settings.get_cors_origins() or []
+cors_origins.extend([
+    "http://localhost:8080",
+    "http://127.0.0.1:8080",
+    "*"
+])
 app.add_middleware(
     CORSMiddleware,
     allow_origins=cors_origins,
-    allow_origin_regex=vercel_origin_regex,
+    allow_origin_regex="https://randproject(?:-[^.]+)?\.vercel\.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

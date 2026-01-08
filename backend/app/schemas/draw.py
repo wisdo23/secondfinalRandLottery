@@ -5,7 +5,8 @@ from datetime import datetime
 class DrawCreate(BaseModel):
     game_id: int
     draw_datetime: datetime
-    
+    image: str | None = None
+
     @field_validator('draw_datetime', mode='before')
     @classmethod
     def parse_datetime(cls, v):
@@ -21,6 +22,7 @@ class DrawRead(BaseModel):
     id: int
     game_id: int
     draw_datetime: datetime
+    image: str | None = None
 
     class Config:
         from_attributes = True

@@ -10,8 +10,8 @@ class DrawRepository:
         return res.scalars().all()
 
     @staticmethod
-    async def create(session: AsyncSession, game_id: int, draw_datetime) -> Draw:
-        draw = Draw(game_id=game_id, draw_datetime=draw_datetime)
+    async def create(session: AsyncSession, game_id: int, draw_datetime, image: str | None = None) -> Draw:
+        draw = Draw(game_id=game_id, draw_datetime=draw_datetime, image=image)
         session.add(draw)
         await session.flush()
         await session.refresh(draw)

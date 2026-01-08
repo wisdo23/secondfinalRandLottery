@@ -5,12 +5,14 @@ from typing import Optional
 class GameCreate(BaseModel):
     name: str
     description: Optional[str] = None
+    image: Optional[str] = None  # Image filename from public folder
 
 
 class GameRead(BaseModel):
     id: int
     name: str
     description: Optional[str] = None
+    image: Optional[str] = None
 
     class Config:
         from_attributes = True

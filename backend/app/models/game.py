@@ -10,5 +10,6 @@ class Game(Base, TimestampMixin):
     id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
     name: Mapped[str] = mapped_column(String(100), unique=True, index=True)
     description: Mapped[str | None]
+    image: Mapped[str | None] = mapped_column(String(255), nullable=True)  # Image filename from public folder
 
     draws: Mapped[List["Draw"]] = relationship(back_populates="game", cascade="all, delete-orphan")

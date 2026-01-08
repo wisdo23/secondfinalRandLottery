@@ -42,17 +42,16 @@ export function ResultCardDesign9({ result, className }: ResultCardDesign9Props)
             {heading}
           </h2>
 
-          <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between items-center gap-6">
-            <div className="flex flex-col items-center sm:items-start gap-2">
+          <div className="flex flex-row items-center justify-center gap-4 sm:gap-6 md:gap-8 w-full">
+            <div className="flex flex-col items-center gap-2 flex-1 min-w-0">
               <RandLogo className="w-16 h-16 sm:w-[72px] sm:h-[72px] md:w-20 md:h-20" />
-              <p className="text-amber-900 text-xs sm:text-sm font-semibold tracking-wide text-center sm:text-left uppercase">
+              <p className="text-amber-900 text-xs sm:text-sm font-semibold tracking-wide text-center uppercase">
                 DATE: {formattedDate}
               </p>
             </div>
-
-            <div className="flex flex-col items-center sm:items-end gap-2">
+            <div className="flex flex-col items-center gap-2 flex-1 min-w-0">
               <GameBadge gameName={result.gameName} className="w-24 h-24 sm:w-[104px] sm:h-[104px] md:w-28 md:h-28 drop-shadow-lg" />
-              <div className="text-center sm:text-right">
+              <div className="text-center">
                 <p className="text-xs text-gray-600 uppercase tracking-wide">Event Number</p>
                 <p className="text-blue-800 text-lg sm:text-xl md:text-2xl font-extrabold">{eventNumber}</p>
               </div>
